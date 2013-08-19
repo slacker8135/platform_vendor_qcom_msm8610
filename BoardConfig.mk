@@ -75,7 +75,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Add NON-HLOS files for ota upgrade
-ADD_RADIO_FILES ?= false
+ADD_RADIO_FILES ?= true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_USES_INTERACTION_BOOST := true
 
@@ -88,3 +88,4 @@ HAVE_FT_FW_UPGRADE := true
 
 # Resource manager for audio-video usecases
 BOARD_USES_RESOURCE_MANAGER:= true
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
