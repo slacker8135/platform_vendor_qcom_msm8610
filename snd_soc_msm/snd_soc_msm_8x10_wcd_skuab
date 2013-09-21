@@ -2938,6 +2938,99 @@ SectionVerb
 
 EndSection
 }
+SectionUseCase."QCHAT" {
+Comment "QCHAT use case"
+SectionVerb
+        Name "QCHAT"
+
+        EnableSequence
+                'SEC_MI2S_RX_Voice Mixer QCHAT':1:1
+                'QCHAT_Tx Mixer PRI_MI2S_TX_QCHAT':1:1
+        EndSequence
+
+        DisableSequence
+                'SEC_MI2S_RX_Voice Mixer QCHAT':1:0
+                'QCHAT_Tx Mixer PRI_MI2S_TX_QCHAT':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 14
+        CapturePCM 14
+
+EndSection
+
+SectionVerb
+        Name "QCHATBT SCO Rx"
+
+        EnableSequence
+        EndSequence
+
+        DisableSequence
+                'Internal BTSCO SampleRate':1:8000
+                'INTERNAL_BT_SCO_RX_Voice Mixer QCHAT':1:0
+                'QCHAT_Tx Mixer INTERNAL_BT_SCO_TX_QCHAT':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 14
+        CapturePCM 14
+
+EndSection
+
+SectionVerb
+        Name "QCHATBT SCO Tx"
+
+        EnableSequence
+                'Internal BTSCO SampleRate':1:8000
+                'INTERNAL_BT_SCO_RX_Voice Mixer QCHAT':1:1
+                'QCHAT_Tx Mixer INTERNAL_BT_SCO_TX_QCHAT':1:1
+        EndSequence
+
+        DisableSequence
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 14
+        CapturePCM 14
+
+EndSection
+
+SectionVerb
+        Name "QCHATBT SCO WB Rx"
+
+        EnableSequence
+        EndSequence
+
+        DisableSequence
+                'Internal BTSCO SampleRate':1:8000
+                'INTERNAL_BT_SCO_RX_Voice Mixer QCHAT':1:0
+                'QCHAT_Tx Mixer INTERNAL_BT_SCO_TX_QCHAT':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 14
+        CapturePCM 14
+
+EndSection
+
+SectionVerb
+        Name "QCHATBT SCO WB Tx"
+
+        EnableSequence
+                'Internal BTSCO SampleRate':1:16000
+                'INTERNAL_BT_SCO_RX_Voice Mixer QCHAT':1:1
+                'QCHAT_Tx Mixer INTERNAL_BT_SCO_TX_QCHAT':1:1
+        EndSequence
+
+        DisableSequence
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 14
+        CapturePCM 14
+
+EndSection
+}
 SectionDevice
 	Name "Earpiece"
 	Comment "Handset Rx device"
@@ -6485,6 +6578,97 @@ SectionModifier
 	# ALSA PCMs
 	CapturePCM 15
 	PlaybackPCM 15
+
+EndSection
+
+SectionModifier
+	Name "Play QCHAT"
+
+	EnableSequence
+		'SEC_MI2S_RX_Voice Mixer QCHAT':1:1
+		'QCHAT_Tx Mixer PRI_MI2S_TX_QCHAT':1:1
+	EndSequence
+
+	DisableSequence
+		'SEC_MI2S_RX_Voice Mixer QCHAT':1:0
+		'QCHAT_Tx Mixer PRI_MI2S_TX_QCHAT':1:0
+	EndSequence
+
+	# ALSA PCMs
+	CapturePCM 14
+	PlaybackPCM 14
+
+EndSection
+
+SectionModifier
+	Name "Play QCHATBT SCO Rx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+		'Internal BTSCO SampleRate':1:8000
+		'INTERNAL_BT_SCO_RX_Voice Mixer QCHAT':1:0
+		'QCHAT_Tx Mixer INTERNAL_BT_SCO_TX_QCHAT':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionModifier
+	Name "Play QCHATBT SCO Tx"
+
+	EnableSequence
+		'Internal BTSCO SampleRate':1:8000
+		'INTERNAL_BT_SCO_RX_Voice Mixer QCHAT':1:1
+		'QCHAT_Tx Mixer INTERNAL_BT_SCO_TX_QCHAT':1:1
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionModifier
+	Name "PlayQCHATBT SCO WB Rx"
+
+	EnableSequence
+	EndSequence
+
+	DisableSequence
+		'Internal BTSCO SampleRate':1:8000
+		'INTERNAL_BT_SCO_RX_Voice Mixer QCHAT':1:0
+		'QCHAT_Tx Mixer INTERNAL_BT_SCO_TX_QCHAT':1:0
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
+
+EndSection
+
+SectionModifier
+	Name "Play QCHATBT SCO WB Tx"
+
+	EnableSequence
+		'Internal BTSCO SampleRate':1:16000
+		'INTERNAL_BT_SCO_RX_Voice Mixer QCHAT':1:1
+		'QCHAT_Tx Mixer INTERNAL_BT_SCO_TX_QCHAT':1:1
+	EndSequence
+
+	DisableSequence
+	EndSequence
+
+	# ALSA PCMs
+	PlaybackPCM 14
+	CapturePCM 14
 
 EndSection
 # End of master file
