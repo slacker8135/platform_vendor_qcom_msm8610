@@ -71,7 +71,6 @@ on property:persist.usb.chgdisabled=0
 on boot
     insmod /system/lib/modules/adsprpc.ko
 
-
 #Start the qcom-system-daemon service
 service qcomsysd /system/bin/qcom-system-daemon
    class main
@@ -88,8 +87,8 @@ service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
 #start GNSS/Sensor interface daemon
 service gsiff_daemon /system/bin/gsiff_daemon
    class late_start
-   user system
-   group gps net_raw
+   user gps
+   group gps net_raw misc
 
 service thermal-engine /system/bin/thermal-engine
    class main
