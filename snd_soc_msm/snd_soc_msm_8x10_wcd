@@ -3456,7 +3456,9 @@ SectionDevice
 
 	EnableSequence
 	'DEC1 MUX':0:ADC1
+	'DEC1 Volume':1:68
 	'DEC2 MUX':0:ADC2
+	'DEC2 Volume':1:70
 	'MI2S_TX Channels':0:Two
 	'ADC2 MUX':0:INP3
 	EndSequence
