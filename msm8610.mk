@@ -5,6 +5,8 @@ ifeq ($(TARGET_USES_QCOM_BSP), true)
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 endif #TARGET_USES_QCOM_BSP
 
+DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8610/overlay
+
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
 # media_profiles and media_codecs xmls for 8610
 PRODUCT_COPY_FILES += device/qcom/msm8610/media/media_profiles_8610.xml:system/etc/media_profiles.xml \
