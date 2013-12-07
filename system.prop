@@ -121,4 +121,4 @@ ro.fm.transmitter=false
 
 #Audio Resourcemanager exceptions
 #by enabling following flag to true we support pcm camcorder recording
-rm.audio.exceptions = false
+rm.audio.exceptions = true
