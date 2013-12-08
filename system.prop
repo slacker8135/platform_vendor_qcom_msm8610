@@ -118,3 +118,7 @@ tunnel.audio.encode = false
 #System property for FM transmitter
 #
 ro.fm.transmitter=false
+
+#Audio Resourcemanager exceptions
+#by enabling following flag to true we support pcm camcorder recording
+rm.audio.exceptions = true
