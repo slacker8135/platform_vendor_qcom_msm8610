@@ -19,6 +19,7 @@ $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
        ro.moz.omx.hw.max_width=1280 \
        ro.moz.omx.hw.max_height=720 \
+       ro.moz.cam.0.sensor_offset=180 \
 
 PRODUCT_NAME := msm8610
 PRODUCT_DEVICE := msm8610
