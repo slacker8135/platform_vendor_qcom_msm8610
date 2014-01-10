@@ -36,7 +36,8 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
-    system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
+    system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf \
+    system/bluetooth/data/audio.conf:system/etc/bluetooth/audio.conf
 
 #fstab.qcom
 PRODUCT_PACKAGES += fstab.qcom
