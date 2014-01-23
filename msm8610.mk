@@ -67,3 +67,16 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
     device/qcom/msm8610/whitelist_appops.xml:system/etc/whitelist_appops.xml
+
+# Gecko low-memory killer setting overrides
+#
+# It would be nice to use PRODUCT_COPY_FILES here instead but that is not
+# currently possible due to various |rm -rf ...| commands in
+# {gaia,gonk-misc}/Android.mk that Make does not know about.
+#
+out/target/product/$(ACTIVE_TARGET)/system/gecko: gaia/profile/defaults/pref/lmk.js
+.PHONY: gaia/profile/defaults/pref/lmk.js
+gaia/profile/defaults/pref/lmk.js: gaia/profile.tar.gz
+	echo 'pref("hal.processPriorityManager.gonk.BACKGROUND.KillUnderMB", 10);' > $@
+	echo 'pref("hal.processPriorityManager.gonk.notifyLowMemUnderMB", 9);' >> $@
+
