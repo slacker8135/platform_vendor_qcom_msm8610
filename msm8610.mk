@@ -73,7 +73,7 @@ PRODUCT_COPY_FILES += \
 # currently possible due to various |rm -rf ...| commands in
 # {gaia,gonk-misc}/Android.mk that Make does not know about.
 #
-out/target/product/$(ACTIVE_TARGET)/system/gecko: gaia/profile/defaults/pref/lmk.js
+out/target/product/$(TARGET_PRODUCT)/system/gecko: gaia/profile/defaults/pref/lmk.js
 .PHONY: gaia/profile/defaults/pref/lmk.js
 gaia/profile/defaults/pref/lmk.js: gaia/profile.tar.gz
 	echo 'pref("hal.processPriorityManager.gonk.BACKGROUND.KillUnderMB", 10);' > $@
