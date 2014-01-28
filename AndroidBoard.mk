@@ -19,7 +19,11 @@ endif
 # Compile Linux Kernel
 #----------------------------------------------------------------------
 ifeq ($(KERNEL_DEFCONFIG),)
-    KERNEL_DEFCONFIG := msm8610-perf_defconfig
+    ifneq ($(filter user, $(TARGET_BUILD_VARIANT)),)
+        KERNEL_DEFCONFIG := msm8610-perf_defconfig
+    else
+        KERNEL_DEFCONFIG := msm8610_defconfig
+    endif
 endif
 
 include kernel/AndroidKernel.mk
