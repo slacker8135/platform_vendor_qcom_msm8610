@@ -46,6 +46,8 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8610/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_PACKAGES += wcnss_service
+PRODUCT_PACKAGES += trace_util
+PRODUCT_PACKAGES += libtraceability
 
 #ANT stack
 PRODUCT_PACKAGES += \
