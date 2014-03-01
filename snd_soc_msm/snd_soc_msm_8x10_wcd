@@ -3460,6 +3460,7 @@ SectionDevice
 		'DEC1 MUX':0:ADC2
 		'ADC2 MUX':0:INP2
 		'IIR1 INP1 MUX':0:DEC1
+		'ADC2 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -3479,6 +3480,7 @@ SectionDevice
 
 	EnableSequence
 		'DEC1 MUX':0:ADC1
+		'ADC1 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -3527,6 +3529,7 @@ SectionDevice
 	EnableSequence
 		'DEC1 MUX':0:ADC1
 		'IIR1 INP1 MUX':0:DEC1
+		'ADC1 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -3545,6 +3548,7 @@ SectionDevice
 
 	EnableSequence
 		'DEC1 MUX':0:ADC1
+		'ADC1 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -3597,6 +3601,8 @@ SectionDevice
 	'DEC2 Volume':1:70
 	'MI2S_TX Channels':0:Two
 	'ADC2 MUX':0:INP3
+	'ADC1 Volume':1:65
+	'ADC2 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -3635,6 +3641,8 @@ SectionDevice
 	'DEC2 MUX':0:ADC2
 	'MI2S_TX Channels':0:Two
 	'ADC2 MUX':0:INP3
+	'ADC1 Volume':1:65
+	'ADC2 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -3709,6 +3717,7 @@ SectionDevice
 		'TTY Mode':0:HCO
 		'DEC1 MUX':0:ADC2
 		'ADC2 MUX':0:INP2
+		'ADC2 Volume':1:65
 	EndSequence
 
 	DisableSequence
@@ -3751,6 +3760,7 @@ SectionDevice
 	EnableSequence
 		'DEC1 MUX':0:ADC2
 		'ADC2 MUX':0:INP2
+		'ADC2 Volume':1:65
 	EndSequence
 
 	DisableSequence
