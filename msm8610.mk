@@ -46,6 +46,11 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8610/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_PACKAGES += wcnss_service
+
+#Added by czb@tcl.com 20140305,add recovery & modem version showed in *#3228#,start
+PRODUCT_PACKAGES += mverproxy
+#End: Added by czb@tcl.com 20140305,add recovery & modem version showed in *#3228#
+
 PRODUCT_PACKAGES += trace_util
 PRODUCT_PACKAGES += libtraceability
 
