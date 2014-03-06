@@ -62,6 +62,8 @@ on boot
 on post-fs-data
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
+    #for load imei/wifi/bt mac
+    mkdir /data/param
 
 # Allow usb charging to be disabled persistently
 on property:persist.usb.chgdisabled=1
@@ -140,3 +142,20 @@ service wcnss-service /system/bin/wcnss_service
 
 on property:wlan.driver.ath=0
     start wcnss-service
+service factory_test /system/bin/factory_test
+   class late_start
+   user root
+   group root
+
+service trace_util /system/bin/trace_util
+   class late_start
+   user root
+   group root
+
+#Added by czb@tcl.com 20140305, recovery & modem version showed in *#3228#,Start
+service mverproxy /system/bin/mverproxy
+   class late_start
+   user root
+   group root
+   oneshot
+#Added by czb@tcl.com 20140305, recovery & modem version showed in *#3228#,End
