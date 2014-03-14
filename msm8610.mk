@@ -61,7 +61,7 @@ PRODUCT_PACKAGES += \
     antradio_app
 
 PRODUCT_PACKAGES += \
-            bnfc-nci \
+            libnfc-nci \
             libnfc_nci_jni \
             nfc_nci_pn547.msm8610 \
             NfcNci \
