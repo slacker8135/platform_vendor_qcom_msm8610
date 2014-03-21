@@ -12,6 +12,14 @@ USE_CAMERA_STUB := true
 
 -include $(QCPATH)/common/msm8610/BoardConfigVendor.mk
 
+# [FEATURE]-ADD by ling.yi@jrdcom.com, 2013/11/08, Bug 550459, FOTA porting begin
+# used to define TCT FOTA solution for scribe5
+TARGET_USES_TCT_FOTA := true
+# [FEATURE]-ADD by ling.yi@jrdcom.com, 2013/11/08, Bug 550459, FOTA porting end
+
+#Add by changmei.chen@tcl.com, 2013/11/15, For root check machnism.
+FEATURE_TCT_ROOTCHECK := true
+
 #TODO: For bring-up only; disable QC display path
 TARGET_BYPASS_QCUI := true
 

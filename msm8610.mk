@@ -1,5 +1,7 @@
 TARGET_USES_QCOM_BSP := true
-
+#added by tcl_baijian release key makefile 2014-02-20 begin
+-include vendor/jrdcom/security/TCT_releasekeys/jrd_certificate.mk
+#added by tcl_baijian release key makefile 2014-02-20 end
 ifeq ($(TARGET_USES_QCOM_BSP), true)
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
@@ -60,6 +62,9 @@ PRODUCT_PACKAGES += \
     libantradio \
     antradio_app
 
+#Added by tcl baijian Fota update:copy updater to system/bin 2014-02-27 begin
+PRODUCT_PACKAGES += updater
+#Added by tcl baijian Fota update:copy updater to system/bin 2014-02-27 end
 PRODUCT_PACKAGES += \
             libnfc-nci \
             libnfc_nci_jni \
