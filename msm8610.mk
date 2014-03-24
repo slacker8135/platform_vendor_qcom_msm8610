@@ -1,5 +1,7 @@
 TARGET_USES_QCOM_BSP := true
-
+#added by tcl_baijian release key makefile 2014-02-20 begin
+-include vendor/jrdcom/security/TCT_releasekeys/jrd_certificate.mk
+#added by tcl_baijian release key makefile 2014-02-20 end
 ifeq ($(TARGET_USES_QCOM_BSP), true)
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
@@ -47,11 +49,32 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += wcnss_service
 
+#Added by czb@tcl.com 20140305,add recovery & modem version showed in *#3228#,start
+PRODUCT_PACKAGES += mverproxy
+#End: Added by czb@tcl.com 20140305,add recovery & modem version showed in *#3228#
+
+PRODUCT_PACKAGES += trace_util
+PRODUCT_PACKAGES += libtraceability
+
 #ANT stack
 PRODUCT_PACKAGES += \
     AntHalService \
     libantradio \
     antradio_app
+
+#Added by tcl baijian Fota update:copy updater to system/bin 2014-02-27 begin
+PRODUCT_PACKAGES += updater
+#Added by tcl baijian Fota update:copy updater to system/bin 2014-02-27 end
+PRODUCT_PACKAGES += \
+            libnfc-nci \
+            libnfc_nci_jni \
+            nfc_nci_pn547.msm8610 \
+            NfcNci \
+            Tag \
+            com.android.nfc_extras
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.moz.nfc.enabled=true
+
 
 # Sensors feature definition file/s
 PRODUCT_COPY_FILES += \
@@ -78,4 +101,23 @@ out/target/product/$(TARGET_PRODUCT)/system/gecko: gaia/profile/defaults/pref/lm
 gaia/profile/defaults/pref/lmk.js: gaia/profile.tar.gz
 	echo 'pref("hal.processPriorityManager.gonk.BACKGROUND.KillUnderMB", 10);' > $@
 	echo 'pref("hal.processPriorityManager.gonk.notifyLowMemUnderMB", 9);' >> $@
+
+# NFCEE access control
+ifeq ($(TARGET_BUILD_VARIANT),user)
+    NFCEE_ACCESS_PATH := device/qcom/msm8610/nfc/nfcee_access.xml
+else
+    NFCEE_ACCESS_PATH := device/qcom/msm8610/nfc/nfcee_access_debug.xml
+endif
+
+
+PRODUCT_COPY_FILES += \
+        packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
+        frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
+        frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+        $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
+        frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+        frameworks/native/data/etc/pn544nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf\
+        frameworks/native/data/etc/pn544nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf\
+        frameworks/native/data/etc/pn544nfc/route.xml:system/etc/param/route.xml\
+        frameworks/native/data/etc/pn544nfc/libpn547_fw.so:system/vendor/firmware/libpn547_fw.so
 
