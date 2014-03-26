@@ -117,3 +117,5 @@ ro.fm.transmitter=false
 #Audio Resourcemanager exceptions
 #by enabling following flag to true we support pcm camcorder recording
 rm.audio.exceptions = true
+#add for improve emmc/sd write speed
+ro.sys.umsdirtyratio=10
