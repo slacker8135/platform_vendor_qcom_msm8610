@@ -3369,7 +3369,7 @@ SectionDevice
 	EnableSequence
 		'MI2S_RX Channels':0:Two
 		'RX3 MIX1 INP1':0:RX1
-		'SPK DAC Switch':1:1
+		'RDAC4 MUX':0:RX3
 		'RX1 MIX1 INP1':0:RX1
 		'RX2 MIX1 INP1':0:RX2
 		'HPHL DAC Switch':1:1
@@ -3378,7 +3378,7 @@ SectionDevice
 	DisableSequence
 		'MI2S_RX Channels':0:One
 		'RX3 MIX1 INP1':0:ZERO
-		'SPK DAC Switch':1:0
+		'RDAC4 MUX':0:ZERO
 		'RX1 MIX1 INP1':0:ZERO
 		'RX2 MIX1 INP1':0:ZERO
 		'HPHL DAC Switch':1:0
@@ -3973,12 +3973,12 @@ SectionDevice
 
 	EnableSequence
 		'RX3 MIX1 INP1':0:RX1
-		'SPK DAC Switch':1:1
+		'RDAC4 MUX':0:RX3
 	EndSequence
 
 	DisableSequence
 		'RX3 MIX1 INP1':0:ZERO
-		'SPK DAC Switch':1:0
+		'RDAC4 MUX':0:ZERO
 	EndSequence
 
 	ACDBID  15:1
@@ -4014,7 +4014,7 @@ SectionDevice
 
 	EnableSequence
 		'RX3 MIX1 INP1':0:RX1
-		'SPK DAC Switch':1:1
+		'RDAC4 MUX':0:RX3
 		'RX1 MIX1 INP1':0:RX1
 		'RX2 MIX1 INP1':0:RX2
 		'HPHL DAC Switch':1:1
@@ -4022,7 +4022,7 @@ SectionDevice
 
 	DisableSequence
 		'RX3 MIX1 INP1':0:ZERO
-		'SPK DAC Switch':1:0
+		'RDAC4 MUX':0:ZERO
 		'RX1 MIX1 INP1':0:ZERO
 		'RX2 MIX1 INP1':0:ZERO
 		'HPHL DAC Switch':1:0
@@ -4069,12 +4069,12 @@ SectionDevice
 
 	EnableSequence
 		'RX3 MIX1 INP1':0:RX1
-		'SPK DAC Switch':1:1
+		'RDAC4 MUX':0:RX3
 	EndSequence
 
 	DisableSequence
 		'RX3 MIX1 INP1':0:ZERO
-		'SPK DAC Switch':1:1
+		'RDAC4 MUX':0:RX3
 	EndSequence
 
 	ACDBID  15:1
