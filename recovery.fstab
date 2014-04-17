@@ -49,3 +49,7 @@
 # [FEATURE]-ADD by ling.yi@jrdcom.com, 2013/11/08, Bug 550459, FOTA porting end
 #Fota internal sdcard mount
 /dev/block/platform/msm_sdcc.1/by-name/usbmsc       /storage/sdcard0 vfat   defaults                                                        wait
+#update study image need below device and mount point
+/dev/block/platform/msm_sdcc.1/by-name/fsg          /study          emmc    defaults                                                        defaults
+/dev/block/platform/msm_sdcc.1/by-name/modemst1     /modemst1       emmc    defaults                                                        defaults
+/dev/block/platform/msm_sdcc.1/by-name/modemst2     /modemst2       emmc    defaults                                                        defaults
