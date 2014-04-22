@@ -73,7 +73,7 @@ PRODUCT_PACKAGES += \
             Tag \
             com.android.nfc_extras
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.moz.nfc.enabled=true
+    ro.moz.nfc.enabled=false
 
 
 # Sensors feature definition file/s
@@ -119,5 +119,6 @@ PRODUCT_COPY_FILES += \
         frameworks/native/data/etc/pn544nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf\
         frameworks/native/data/etc/pn544nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf\
         frameworks/native/data/etc/pn544nfc/route.xml:system/etc/param/route.xml\
-        frameworks/native/data/etc/pn544nfc/libpn547_fw.so:system/vendor/firmware/libpn547_fw.so
+        frameworks/native/data/etc/pn544nfc/libpn547_fw.so:system/vendor/firmware/libpn547_fw.so\
+		frameworks/native/data/etc/pn544nfc/pn547_set_xclk:system/bin/pn547_set_xclk
 
