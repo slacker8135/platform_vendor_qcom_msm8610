@@ -151,3 +151,11 @@ service ppd /system/bin/mm-pp-daemon
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
+
+#Added by czb@tcl.com 20140305, recovery & modem version showed in *#3228#,Start
+service mverproxy /system/bin/mverproxy
+   class late_start
+   user root
+   group root
+   oneshot
+#Added by czb@tcl.com 20140305, recovery & modem version showed in *#3228#,End
