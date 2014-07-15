@@ -94,6 +94,7 @@ HAVE_FT_FW_UPGRADE := true
 
 # Resource manager for audio-video usecases
 BOARD_USES_RESOURCE_MANAGER:= true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 TARGET_INIT_VENDOR_LIB := libinit_msm
 
