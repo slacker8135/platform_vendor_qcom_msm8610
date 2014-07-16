@@ -82,7 +82,7 @@ PRODUCT_COPY_FILES += \
 
 # NFC packages
 ifeq ($(TARGET_USES_QCA_NFC),true)
-NFC_D := true
+NFC_D := false
 
 ifeq ($(NFC_D), true)
     PRODUCT_PACKAGES += \
@@ -97,11 +97,14 @@ else
     PRODUCT_PACKAGES += \
     libnfc-nci \
     libnfc_nci_jni \
-    nfc_nci.msm8610 \
+    nfc_nci_pn547.msm8610 \
     NfcNci \
     Tag \
     com.android.nfc_extras
 endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.moz.nfc.enabled=true
 
 # file that declares the MIFARE NFC constant
 # Commands to migrate prefs from com.android.nfc3 to com.android.nfc
@@ -110,7 +113,12 @@ PRODUCT_COPY_FILES += \
         packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
         frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
         frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-        frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
+        frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml\
+        frameworks/native/data/etc/route.xml:system/etc/param/route.xml\
+        frameworks/native/data/etc/libpn547_fw.so:system/vendor/firmware/libpn547_fw.so \
+        frameworks/native/data/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+        frameworks/native/data/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+        frameworks/native/data/etc/pn547_set_xclk:system/bin/pn547_set_xclk
 endif # BOARD_HAVE_QCA_NFC
 
 # Gecko low-memory killer setting overrides
