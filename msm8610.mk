@@ -103,7 +103,7 @@ else
     com.android.nfc_extras
 endif
 
-PRODUCT_PROPERTY_OVERRIDES += \
+#PRODUCT_PROPERTY_OVERRIDES += \
     ro.moz.nfc.enabled=true
 
 # file that declares the MIFARE NFC constant
