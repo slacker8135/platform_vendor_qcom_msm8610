@@ -17,6 +17,13 @@ TARGET_HAS_QC_KERNEL_SOURCE := true
 
 -include $(QCPATH)/common/msm8610/BoardConfigVendor.mk
 
+# [FEATURE]-ADD by ling.yi@jrdcom.com, 2013/11/08, Bug 550459, FOTA porting begin
+# used to define TCT FOTA solution for scribe5
+TARGET_USES_TCT_FOTA := true
+# [FEATURE]-ADD by ling.yi@jrdcom.com, 2013/11/08, Bug 550459, FOTA porting end
+
+#Add by changmei.chen@tcl.com, 2013/11/15, For root check machnism.
+FEATURE_TCT_ROOTCHECK := true
 #TODO: Fix-me: Setting TARGET_HAVE_HDMI_OUT to false
 # to get rid of compilation error.
 TARGET_HAVE_HDMI_OUT := false
