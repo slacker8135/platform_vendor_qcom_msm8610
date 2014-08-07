@@ -60,6 +60,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += mverproxy
 #End: Added by czb@tcl.com 20140305,add recovery & modem version showed in *#3228#
 
+PRODUCT_PACKAGES += trace_util
+PRODUCT_PACKAGES += libtraceability
+
 #ANT stack
 PRODUCT_PACKAGES += \
     AntHalService \
