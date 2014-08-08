@@ -38,8 +38,8 @@ on early-init
 
 on init
     symlink /storage/sdcard /storage/sdcard0
-    export EXTERNAL_STORAGE /sdcard
-    export SECONDARY_STORAGE /storage/sdcard1
+    export EXTERNAL_STORAGE /mnt/media_rw/sdcard
+    export SECONDARY_STORAGE /mnt/media_rw/sdcard1
 
 on fs
     mount_all fstab.qcom
