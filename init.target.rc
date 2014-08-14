@@ -168,7 +168,10 @@ service factory_test /system/bin/factory_test
    user root
    group root
 
+#[BUGFIX]-Add-BEGIN by TCTNB.xiaomanwang,08/14/2014,760647, #set default bt/wifi mac if trace is NU
 service trace_util /system/bin/trace_util
    class late_start
    user root
    group root
+   oneshot
+#[BUGFIX]-Add-END by TCTNB.xiaomanwang 
