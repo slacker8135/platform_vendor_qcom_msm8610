@@ -126,4 +126,9 @@ ro.fm.transmitter=false
 
 #enable dsp gapless mode by default
 audio.offload.gapless.enabled=true
+#add for improve emmc/sd write speed
+ro.sys.umsdirtyratio=10
+#add for wlan.ko unload
+#ro.moz.wifi.unloaddriver = 1 
+
 
