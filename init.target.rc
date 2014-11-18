@@ -34,6 +34,12 @@ on early-init
     write /sys/kernel/mm/ksm/sleep_millisecs 500
     write /sys/kernel/mm/ksm/run 1
     write /sys/block/zram0/disksize 192M
+    symlink /dev/socket/rild1 /dev/socket/rilproxy1
+
+on init
+    symlink /storage/sdcard /storage/sdcard0
+    export EXTERNAL_STORAGE /mnt/media_rw/sdcard
+    export SECONDARY_STORAGE /mnt/media_rw/sdcard1
 
 on fs
     mount_all fstab.qcom
@@ -61,6 +67,8 @@ on boot
 on post-fs-data
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
+	#for load imei/wifi/bt mac
+	mkdir /data/param
 
 # Allow usb charging to be disabled persistently
 on property:persist.usb.chgdisabled=1
@@ -146,3 +154,24 @@ service ppd /system/bin/mm-pp-daemon
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
+
+#Added by czb@tcl.com 20140305, recovery & modem version showed in *#3228#,Start
+service mverproxy /system/bin/mverproxy
+   class late_start
+   user root
+   group root
+   oneshot
+#Added by czb@tcl.com 20140305, recovery & modem version showed in *#3228#,End
+
+service factory_test /system/bin/factory_test
+   class late_start
+   user root
+   group root
+
+#[BUGFIX]-Add-BEGIN by TCTNB.xiaomanwang,08/14/2014,760647, #set default bt/wifi mac if trace is NU
+service trace_util /system/bin/trace_util
+   class late_start
+   user root
+   group root
+   oneshot
+#[BUGFIX]-Add-END by TCTNB.xiaomanwang 
