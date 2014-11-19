@@ -92,6 +92,28 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     device/qcom/msm8610/whitelist_appops.xml:system/etc/whitelist_appops.xml
 
+#added by gaolu@tcl.com add testbox test 20140910
+    PRODUCT_PACKAGES += iperf
+    PRODUCT_PACKAGES += wifitest
+    PRODUCT_PACKAGES += \
+            bt_radio_run \
+            bt_radio_stop \
+            btTx_start \
+            btTx_run
+    PRODUCT_PACKAGES += gps_test
+    PRODUCT_PACKAGES += trace_debug
+    PRODUCT_PACKAGES += diag.cfg
+    PRODUCT_PACKAGES += tcpdump
+    PRODUCT_PACKAGES += \
+            jrdsrvfunc \
+            bgservice \
+            jrdlogcatservice \
+            jrdqxdmservice \
+            jrddmesgservice \
+            jrdtcpdumpservice \
+            jrdhttpgeckolog
+#end
+
 # NFC packages
 ifeq ($(TARGET_USES_QCA_NFC),true)
 NFC_D := false
