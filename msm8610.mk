@@ -139,11 +139,11 @@ endif # BOARD_HAVE_QCA_NFC
 # currently possible due to various |rm -rf ...| commands in
 # {gaia,gonk-misc}/Android.mk that Make does not know about.
 #
-out/target/product/$(TARGET_PRODUCT)/system/gecko: gaia/profile/defaults/pref/lmk.js
-.PHONY: gaia/profile/defaults/pref/lmk.js
-gaia/profile/defaults/pref/lmk.js: gaia/profile.tar.gz
-	echo 'pref("hal.processPriorityManager.gonk.BACKGROUND.KillUnderKB", 10240);' > $@
-	echo 'pref("hal.processPriorityManager.gonk.notifyLowMemUnderKB", 9216);' >> $@
+#out/target/product/$(TARGET_PRODUCT)/system/gecko: gaia/profile/defaults/pref/lmk.js
+#.PHONY: gaia/profile/defaults/pref/lmk.js
+#gaia/profile/defaults/pref/lmk.js: gaia/profile.tar.gz
+#	echo 'pref("hal.processPriorityManager.gonk.BACKGROUND.KillUnderKB", 10240);' > $@
+#	echo 'pref("hal.processPriorityManager.gonk.notifyLowMemUnderKB", 9216);' >> $@
 
 # Target-specific Gaia configuration
 LOCAL_PATH:=$(dir $(firstword $(MAKEFILE_LIST)))
